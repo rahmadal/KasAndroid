@@ -5,14 +5,18 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class DetailCashFlowActivity extends AppCompatActivity {
+public class DetailCashFlowActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static String id_kas;
     DBHelper DB;
@@ -20,6 +24,7 @@ public class DetailCashFlowActivity extends AppCompatActivity {
     String queryGetAllKas;
     ArrayList<DataKas> kasList;
     RecyclerView recyclerView;
+    ImageView imageViewBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +34,9 @@ public class DetailCashFlowActivity extends AppCompatActivity {
         queryGetAllKas = "";
         DB   = new DBHelper(this);
         recyclerView = findViewById(R.id.rvKas);
+        imageViewBack = findViewById(R.id.imageViewBack);
         kasList = new ArrayList<>();
-
+        imageViewBack.setOnClickListener(this);
         KasAdapter();
         setAdapter();
     }
@@ -58,4 +64,16 @@ public class DetailCashFlowActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
     }
+
+    @Override
+    public void onClick(View v) {
+        Intent i;
+        switch (v.getId()) {
+            case R.id.imageViewBack:
+                i = new Intent(this, BerandaActivity.class);
+                startActivity(i);
+                break;
+        }
+    }
+
 }

@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class PengaturanActivity extends AppCompatActivity implements View.OnClickListener {
     EditText passwordBaru, passwordLama;
-    Button btnSimpan, kembali;
+    Button btnSimpan, btnKembali;
     DBHelper DB;
     Cursor cursor;
 
@@ -25,11 +25,12 @@ public class PengaturanActivity extends AppCompatActivity implements View.OnClic
         passwordLama = findViewById(R.id.editPasswordLama);
         passwordBaru = findViewById(R.id.editPasswordBaru);
         btnSimpan = findViewById(R.id.btnSimpanPengaturan);
-        kembali = findViewById(R.id.btnKembaliPengaturan);
+        btnKembali = findViewById(R.id.btnKembaliPengaturan);
 
         DB = new DBHelper(this);
 
         btnSimpan.setOnClickListener(this);
+        btnKembali.setOnClickListener(this);
     }
 
     @Override
