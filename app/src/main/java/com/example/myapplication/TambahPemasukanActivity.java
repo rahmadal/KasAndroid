@@ -51,7 +51,6 @@ public class TambahPemasukanActivity extends AppCompatActivity implements View.O
 
         private void showDateDialog() {
             Calendar calendar = Calendar.getInstance();
-
             datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -66,7 +65,6 @@ public class TambahPemasukanActivity extends AppCompatActivity implements View.O
     @Override
     public void onClick(View view) {
         Intent i;
-
         switch (view.getId()) {
             case R.id.btnSimpanPengaturan:
                 if (txtTanggal.getText().toString().equals("") || nominal.getText().toString().equals("") || keterangan.getText().toString().equals("")){

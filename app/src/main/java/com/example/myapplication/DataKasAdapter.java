@@ -18,7 +18,7 @@ public class DataKasAdapter extends RecyclerView.Adapter<DataKasAdapter.ViewHold
     private final ArrayList<DataKas> listKas;
 
     public DataKasAdapter(ArrayList<DataKas> listKas) {
-        this.listKas    = listKas;
+        this.listKas = listKas;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
